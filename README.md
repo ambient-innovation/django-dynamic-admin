@@ -6,7 +6,7 @@
 
 Add simple interactions to the otherwise static django admin.
 
-![Demo Animation](https://s9.gifyu.com/images/democ78412a3cd5ee335.gif "Demo")
+[![demo.gif](https://i.postimg.cc/YCf7LV2m/demo.gif)](https://postimg.cc/Yv9ZJdWp)
 
 ## Installation
 
