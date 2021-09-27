@@ -2,8 +2,8 @@ image: docker:20.10
 
 stages:
   - lint
-#  - build
-#  - test
+  - build
+  - test
 
 services:
   - docker:20.10-dind
@@ -23,3 +23,53 @@ lint:
   script:
     - black --check . --exclude .*/migrations/.*
     - flake8
+
+build:
+  stage: build
+  tags:
+    - normal-load
+  script:
+    - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN $CI_REGISTRY
+    - docker pull $CI_REGISTRY_IMAGE:main || true
+    - docker build --cache-from $CI_REGISTRY_IMAGE:main -t $IMAGE_TAG .
+    - docker push $IMAGE_TAG
+
+test:
+  stage: test
+  needs:
+    - build
+  tags:
+    - high-load
+  variables:
+    BACKEND_CONTAINER_NAME: dynamic_admin_backend_e2e
+  artifacts:
+    name: "$CI_JOB_STAGE-$CI_COMMIT_REF_NAME-e2e-tests"
+    expire_in: 1 week
+    when: always
+    paths:
+      - e2e/cypress/screenshots
+      - e2e/cypress/videos
+    reports:
+      junit: e2e/cypress/results/report*.xml
+    before_script:
+      - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN $CI_REGISTRY
+      - docker run
+        --name $BACKEND_CONTAINER_NAME
+        -d
+        -p 8000:8000
+        $IMAGE_TAG
+
+      - mkdir -p ${PWD}/e2e/cypress/screenshots || true
+      - mkdir -p ${PWD}/e2e/cypress/videos || true
+      - mkdir -p ${PWD}/e2e/cypress/results || true
+    script:
+      - docker run --rm
+        -v ${PWD}/e2e:/e2e
+        -w /e2e
+        --network="host"
+        --ipc="host"
+        --entrypoint=""
+        cypress/included:8.4.1
+        /bin/bash -c "yarn install && cypress run --browser chrome --reporter junit --reporter-options 'mochaFile=cypress/results/report-[hash].xml'"
+    after_script:
+      - docker stop $BACKEND_CONTAINER_NAME
