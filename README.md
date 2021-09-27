@@ -12,11 +12,11 @@ Add simple interactions to the otherwise static django admin.
 
 - Install the package via pip:
   
-    ```pip install django-dynamic-admin```
+    ```pip install django-dynamic-admin-forms```
     
     or via pipenv:
 
-    ```pipenv install django-dynamic-admin```
+    ```pipenv install django-dynamic-admin-forms```
 - Add the module to `INSTALLED_APPS`:
     ```python
     INSTALLED_APPS = (
@@ -96,3 +96,4 @@ outerHTML of the correct HTML elements to update the form.
 - 0.1.1: README fixes
 - 0.1.2: README fixes
 - 0.1.3: Change Demo-GIF hosting
+- 0.1.4: README fixes
