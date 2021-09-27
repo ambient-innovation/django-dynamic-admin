@@ -62,7 +62,10 @@ backend/media/*
 */db.sqlite3
 
 # Cypress output
-*/cypress/videos
+*/cypress/*
+
+# Build output
+dist
 
 # SCSS
 .sass-cache/
