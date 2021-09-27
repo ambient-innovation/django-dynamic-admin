@@ -2,7 +2,7 @@
 [![Downloads](https://pepy.tech/badge/django-dynamic-admin-forms)](https://pepy.tech/project/django-dynamic-admin-forms)
 
 
-# django-dynamic-admin
+# django-dynamic-admin-forms
 
 Add simple interactions to the otherwise static django admin.
 
