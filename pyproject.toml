@@ -25,7 +25,7 @@ dependencies = [
 
 [project.optional-dependencies]
 lint = [
-    "black <22"
+    "black ==21.9b0"
 ]
 
 [tool.flit.module]
