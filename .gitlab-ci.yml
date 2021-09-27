@@ -51,25 +51,25 @@ test:
       - e2e/cypress/videos
     reports:
       junit: e2e/cypress/results/report*.xml
-    before_script:
-      - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN $CI_REGISTRY
-      - docker run
-        --name $BACKEND_CONTAINER_NAME
-        -d
-        -p 8000:8000
-        $IMAGE_TAG
+  before_script:
+    - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN $CI_REGISTRY
+    - docker run
+      --name $BACKEND_CONTAINER_NAME
+      -d
+      -p 8000:8000
+      $IMAGE_TAG
 
-      - mkdir -p ${PWD}/e2e/cypress/screenshots || true
-      - mkdir -p ${PWD}/e2e/cypress/videos || true
-      - mkdir -p ${PWD}/e2e/cypress/results || true
-    script:
-      - docker run --rm
-        -v ${PWD}/e2e:/e2e
-        -w /e2e
-        --network="host"
-        --ipc="host"
-        --entrypoint=""
-        cypress/included:8.4.1
-        /bin/bash -c "yarn install && cypress run --browser chrome --reporter junit --reporter-options 'mochaFile=cypress/results/report-[hash].xml'"
-    after_script:
-      - docker stop $BACKEND_CONTAINER_NAME
+    - mkdir -p ${PWD}/e2e/cypress/screenshots || true
+    - mkdir -p ${PWD}/e2e/cypress/videos || true
+    - mkdir -p ${PWD}/e2e/cypress/results || true
+  script:
+    - docker run --rm
+      -v ${PWD}/e2e:/e2e
+      -w /e2e
+      --network="host"
+      --ipc="host"
+      --entrypoint=""
+      cypress/included:8.4.1
+      /bin/bash -c "yarn install && cypress run --browser chrome --reporter junit --reporter-options 'mochaFile=cypress/results/report-[hash].xml'"
+  after_script:
+    - docker stop $BACKEND_CONTAINER_NAME
