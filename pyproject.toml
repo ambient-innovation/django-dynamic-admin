@@ -1,0 +1,19 @@
+[build-system]
+requires = ["flit_core >=3.2,<4"]
+build-backend = "flit_core.buildapi"
+
+[project]
+name = "django_dynamic_admin"
+authors = [{name = "Fabian Binz", email = "fabian.binz@gmail.com"}]
+readme = "README.md"
+classifiers = ["License :: OSI Approved :: MIT License"]
+dynamic = ["version", "description"]
+dependencies = [
+    "django ~=3.2",
+]
+
+[tool.flit.module]
+name = "dynamic_admin"
+
+[project.urls]
+Home = "http://ambient.digital"

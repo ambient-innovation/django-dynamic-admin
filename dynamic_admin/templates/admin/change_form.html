@@ -1,0 +1,22 @@
+{% extends "admin/change_form.html" %}
+{% load static %}
+
+{% block admin_change_form_document_ready %}
+    <script type="text/javascript" src="{% static 'js/dynamic_admin.js' %}"></script>
+
+    <script type="text/javascript">
+    {% for field_name in adminform.model_admin.dynamic_select_fields %}
+        DynamicAdmin.dynamicSelect("{{ opts.app_label }}", "{{ opts.model_name }}", "{{ field_name }}");
+    {% endfor %}
+    {% for field_name in adminform.model_admin.dynamic_input_fields %}
+        DynamicAdmin.dynamicInput("{{ opts.app_label }}", "{{ opts.model_name }}", "{{ field_name }}");
+    {% endfor %}
+    </script>
+
+    <script>
+        // Needed to prevent django-jazzmin from converting all
+        // select elements into Select2 widgets. These widgets currently
+        // don't work with the htmx logic included here.
+        // django.jQuery('select').addClass("selectfilter");
+    </script>
+{% endblock %}
