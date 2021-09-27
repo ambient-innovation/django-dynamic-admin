@@ -1,13 +1,12 @@
 var DynamicAdmin = {
     handleResponse: function(target, data) {
-        console.log(data)
         data = JSON.parse(data);
         if (data.hidden) {
             target.parentNode.parentNode.classList.add("hidden");
         } else {
             target.parentNode.parentNode.classList.remove("hidden");
-            target.outerHTML = data.html;
         }
+        target.outerHTML = data.html;
     },
 
     dynamicSelect: function(app_label, model_name, field_name) {
