@@ -95,3 +95,4 @@ outerHTML of the correct HTML elements to update the form.
 - 0.1.0: Initial release
 - 0.1.1: README fixes
 - 0.1.2: README fixes
+- 0.1.3: Change Demo-GIF hosting
