@@ -12,7 +12,7 @@ class DistrictAdmin(admin.ModelAdmin):
 @admin.register(Customer)
 class CustomerAdmin(DynamicModelAdminMixin, admin.ModelAdmin):
     fields = ("name", "district", "employee", "lead_reason", "lead_reason_other")
-    dynamic_fields = ("name", "employee", "lead_reason_other")
+    dynamic_fields = ("employee", "lead_reason_other")
 
     def get_dynamic_employee_field(self, data):
         queryset = Employee.objects.filter(district=data.get("district"))
@@ -24,12 +24,6 @@ class CustomerAdmin(DynamicModelAdminMixin, admin.ModelAdmin):
         hidden = False
 
         return queryset, value, hidden
-
-    def get_dynamic_name_field(self, data):
-        if name := data.get("name"):
-            return None, name, False
-        else:
-            return None, data.get("district"), False
 
     def get_dynamic_lead_reason_other_field(self, data):
         hidden = data.get("lead_reason") != Customer.LeadReason.OTHER

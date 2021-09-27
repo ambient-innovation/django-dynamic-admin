@@ -1,0 +1,25 @@
+image: docker:20.10
+
+stages:
+  - lint
+#  - build
+#  - test
+
+services:
+  - docker:20.10-dind
+
+variables:
+  DOCKER_DRIVER: overlay2
+  DOCKER_HOST: tcp://localhost:2375
+  IMAGE_TAG: $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_SLUG
+
+lint:
+  image: python:3.9-slim
+  stage: lint
+  tags:
+    - normal-load
+  before_script:
+    - pip install black flake8 pep8-naming
+  script:
+    - black --check . --exclude .*/migrations/.*
+    - flake8

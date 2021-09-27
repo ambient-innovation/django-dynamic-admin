@@ -1,0 +1,12 @@
+{
+  "name": "django-dynamic-admin-e2e",
+  "version": "0.1.0",
+  "description": "End-To-End Tests for the django-dynamic-admin package",
+  "author": "Fabian Binz",
+  "scripts": {
+    "cypress": "cypress open"
+  },
+  "devDependencies": {
+    "cypress": "^8.4.1"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "baseUrl": "http://localhost:8000",
+  "defaultCommandTimeout": 1000,
+  "viewportWidth": 1280,
+  "integrationFolder": "cypress/integration"
+}
