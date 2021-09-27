@@ -85,3 +85,7 @@ outerHTML of the correct HTML elements to update the form.
 - does not validate that the selected value is really part of the original queryset
   - if anybody can modify your DOM, they could potentially inject invalid values
   - you have to write `Model.clean()` methods to guard against that
+- only tested with Django 3.2
+
+## Changelog
+- 0.1.0: Initial release

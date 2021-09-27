@@ -12,7 +12,9 @@ class DynamicModelAdminMixin:
     def get_form(self, request, obj=None, change=False, **kwargs):
         form = super().get_form(request, obj, change, **kwargs)
         self.dynamic_select_fields = filter(self._is_related_field, self.dynamic_fields)
-        self.dynamic_input_fields = filterfalse(self._is_related_field, self.dynamic_fields)
+        self.dynamic_input_fields = filterfalse(
+            self._is_related_field, self.dynamic_fields
+        )
         return form
 
     def _is_related_field(self, field_name):

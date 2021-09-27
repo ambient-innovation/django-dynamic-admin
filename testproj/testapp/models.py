@@ -17,7 +17,6 @@ class Employee(models.Model):
 
 
 class Customer(models.Model):
-
     class LeadReason(models.IntegerChoices):
         TELEVISION = 1, "TV"
         RADIO = 2, "Radio"
@@ -29,7 +28,9 @@ class Customer(models.Model):
     district = models.ForeignKey(District, on_delete=models.CASCADE)
     employee = models.ForeignKey(Employee, on_delete=models.CASCADE, blank=False)
 
-    lead_reason = models.PositiveSmallIntegerField(choices=LeadReason.choices, default=LeadReason.INTERNET)
+    lead_reason = models.PositiveSmallIntegerField(
+        choices=LeadReason.choices, default=LeadReason.INTERNET
+    )
     lead_reason_other = models.CharField(max_length=50, blank=True)
 
     def __str__(self):

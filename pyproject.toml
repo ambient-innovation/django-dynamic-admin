@@ -12,6 +12,11 @@ dependencies = [
     "django ~=3.2",
 ]
 
+[project.optional-dependencies]
+lint = [
+    "black ==21.9b0"
+]
+
 [tool.flit.module]
 name = "dynamic_admin"
 

@@ -8,34 +8,87 @@ class Migration(migrations.Migration):
 
     initial = True
 
-    dependencies = [
-    ]
+    dependencies = []
 
     operations = [
         migrations.CreateModel(
-            name='District',
+            name="District",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.CharField(max_length=255)),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("name", models.CharField(max_length=255)),
             ],
         ),
         migrations.CreateModel(
-            name='Employee',
+            name="Employee",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.CharField(max_length=255)),
-                ('district', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='testapp.district')),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("name", models.CharField(max_length=255)),
+                (
+                    "district",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        to="testapp.district",
+                    ),
+                ),
             ],
         ),
         migrations.CreateModel(
-            name='Customer',
+            name="Customer",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.CharField(max_length=255)),
-                ('lead_reason', models.PositiveSmallIntegerField(choices=[(1, 'TV'), (2, 'Radio'), (3, 'Internet'), (4, 'Personal'), (5, 'Other')], default=3)),
-                ('lead_reason_other', models.CharField(blank=True, max_length=50)),
-                ('district', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='testapp.district')),
-                ('employee', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='testapp.employee')),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("name", models.CharField(max_length=255)),
+                (
+                    "lead_reason",
+                    models.PositiveSmallIntegerField(
+                        choices=[
+                            (1, "TV"),
+                            (2, "Radio"),
+                            (3, "Internet"),
+                            (4, "Personal"),
+                            (5, "Other"),
+                        ],
+                        default=3,
+                    ),
+                ),
+                ("lead_reason_other", models.CharField(blank=True, max_length=50)),
+                (
+                    "district",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        to="testapp.district",
+                    ),
+                ),
+                (
+                    "employee",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        to="testapp.employee",
+                    ),
+                ),
             ],
         ),
     ]
