@@ -3,7 +3,7 @@ FROM python:3.9
 WORKDIR /src/
 
 COPY pyproject.toml README.md tox.ini /src/
-COPY dynamic_admin_forms /src/dynamic_admin/
+COPY dynamic_admin_forms /src/dynamic_admin_forms/
 
 RUN python -m venv .venv
 RUN pip install flit django~=3.2
