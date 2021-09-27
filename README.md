@@ -3,7 +3,6 @@
 Add simple interactions to the otherwise static django admin.
 ![Demo Animation](docs/demo.gif "Demo")
 
-
 ## Installation
 
 - Install the package via pip:
