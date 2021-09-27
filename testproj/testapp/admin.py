@@ -42,4 +42,4 @@ class CustomerAdmin(DynamicModelAdminMixin, admin.ModelAdmin):
 
 @admin.register(Employee)
 class EmployeeAdmin(admin.ModelAdmin):
-    pass
+    list_display = ("name", "district")

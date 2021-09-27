@@ -1,6 +1,8 @@
 # django-dynamic-admin
 
 Add simple interactions to the otherwise static django admin.
+![Demo Animation](docs/demo.gif "Demo")
+
 
 ## Installation
 
@@ -34,3 +36,10 @@ Add simple interactions to the otherwise static django admin.
       },
   ]
   ```
+
+## How it works
+
+## Limitations
+
+
+## 
