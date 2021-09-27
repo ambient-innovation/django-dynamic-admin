@@ -16,7 +16,7 @@ var DynamicAdmin = {
         var form = $('#' + model_name + '_form');
         form.on(("change"), function() {
             $.post({
-                url: "/dynamic-admin/" + app_label + "/" + model_name + "/" + field_name + "/",
+                url: "/dynamic-admin-form/" + app_label + "/" + model_name + "/" + field_name + "/",
                 data: form.serialize(),
                 success: function(data) {
                     var target = $(".field-" + field_name + " .related-widget-wrapper")[0];
@@ -33,7 +33,7 @@ var DynamicAdmin = {
         var form = $('#' + model_name + '_form');
         form.on(("change"), function() {
             $.post({
-                url: "/dynamic-admin/" + app_label + "/" + model_name + "/" + field_name + "/",
+                url: "/dynamic-admin-form/" + app_label + "/" + model_name + "/" + field_name + "/",
                 data: form.serialize(),
                 success: function(data) {
                     var target = $("#id_" + field_name)[0];

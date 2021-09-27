@@ -1,7 +1,7 @@
 from django.contrib import admin
 
 from .models import Customer, District, Employee
-from dynamic_admin.admin import DynamicModelAdminMixin
+from dynamic_admin_forms.admin import DynamicModelAdminMixin
 
 
 @admin.register(District)

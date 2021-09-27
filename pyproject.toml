@@ -3,10 +3,21 @@ requires = ["flit_core >=3.2,<4"]
 build-backend = "flit_core.buildapi"
 
 [project]
-name = "django-dynamic-admin"
+name = "django-dynamic-admin-forms"
 authors = [{name = "Fabian Binz", email = "fabian.binz@ambient.digital"}]
 readme = "README.md"
-classifiers = ["License :: OSI Approved :: MIT License"]
+classifiers = [
+    "License :: OSI Approved :: MIT License",
+    "Development Status :: 3 - Alpha",
+    "Environment :: Web Environment",
+    "Framework :: Django",
+    "Framework :: Django :: 3.2",
+    "Intended Audience :: Developers",
+    "Natural Language :: English",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3.9",
+]
 dynamic = ["version", "description"]
 dependencies = [
     "django ~=3.2",
@@ -14,11 +25,11 @@ dependencies = [
 
 [project.optional-dependencies]
 lint = [
-    "black ==21.9b0"
+    "black <22"
 ]
 
 [tool.flit.module]
-name = "dynamic_admin"
+name = "dynamic_admin_forms"
 
 [project.urls]
 Home = "https://ambient.digital"

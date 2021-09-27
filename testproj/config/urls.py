@@ -18,5 +18,5 @@ from django.urls import path, include
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("dynamic-admin/", include("dynamic_admin.urls")),
+    path("dynamic-admin-form/", include("dynamic_admin_forms.urls")),
 ]

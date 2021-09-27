@@ -8,6 +8,8 @@ from django.http import HttpResponse
 
 class DynamicModelAdminMixin:
     dynamic_fields = ()
+    dynamic_select_fields = None
+    dynamic_input_fields = None
 
     def get_form(self, request, obj=None, change=False, **kwargs):
         form = super().get_form(request, obj, change, **kwargs)
