@@ -1,8 +1,12 @@
+[![pypi](https://img.shields.io/pypi/v/django-dynamic-admin-forms.svg)](https://pypi.python.org/pypi/django-dynamic-admin-forms/)
+[![Downloads](https://pepy.tech/badge/django-dynamic-admin-forms)](https://pepy.tech/project/django-dynamic-admin-forms)
+
+
 # django-dynamic-admin
 
 Add simple interactions to the otherwise static django admin.
 
-![Demo Animation](docs/demo.gif "Demo")
+![Demo Animation](https://s9.gifyu.com/images/democ78412a3cd5ee335.gif "Demo")
 
 ## Installation
 
@@ -17,16 +21,16 @@ Add simple interactions to the otherwise static django admin.
     ```python
     INSTALLED_APPS = (
         ...,
-        'dynamic_admin',
+        'dynamic_admin_forms',
         'django.contrib.admin'
         ...
     )    
     ```
-    Ensure that the `dynamic_admin` comes before the 
+    Ensure that the `dynamic_admin_forms` comes before the 
     default `django.contrib.admin` in the list of installed apps,
-    because otherwise the templates, which are overwritten by `dynamic_admin`
+    because otherwise the templates, which are overwritten by `dynamic_admin_forms`
     won't be found.
-- Ensure that the `dynamic_admin` templates are found via using `APP_DIRS` setting:
+- Ensure that the `dynamic_admin_forms` templates are found via using `APP_DIRS` setting:
   ```python
   TEMPLATES = [
       {
@@ -39,7 +43,7 @@ Add simple interactions to the otherwise static django admin.
 - Run `python manage.py collectstatic` to include this apps Javascript code in your `settings.STATIC_ROOT` directory
 
 ## Usage
-- Add the `dynamic_admin.DynamicModelAdminMixin` to your admin classes
+- Add the `dynamic_admin_forms.DynamicModelAdminMixin` to your admin classes
 - In addition to the standard `fields` declaration, specify a list of `dynamic_fields`
 - For each dynamic field, add a method `get_dynamic_{field_name}_field` to the admin
   - Input: `data: Dict[str, Any]` - the cleaned form data
@@ -89,3 +93,5 @@ outerHTML of the correct HTML elements to update the form.
 
 ## Changelog
 - 0.1.0: Initial release
+- 0.1.1: README fixes
+- 0.1.2: README fixes
