@@ -9,6 +9,11 @@ class DistrictAdmin(admin.ModelAdmin):
     pass
 
 
+@admin.register(Employee)
+class EmployeeAdmin(admin.ModelAdmin):
+    list_display = ("name", "district")
+
+
 @admin.register(Customer)
 class CustomerAdmin(DynamicModelAdminMixin, admin.ModelAdmin):
     fields = ("name", "district", "employee", "lead_reason", "lead_reason_other")
@@ -32,8 +37,3 @@ class CustomerAdmin(DynamicModelAdminMixin, admin.ModelAdmin):
         else:
             value = data.get("lead_reason_other")
         return None, value, hidden
-
-
-@admin.register(Employee)
-class EmployeeAdmin(admin.ModelAdmin):
-    list_display = ("name", "district")
