@@ -92,8 +92,9 @@ outerHTML of the correct HTML elements to update the form.
 - only tested with Django 3.2
 
 ## Changelog
-- 0.1.0: Initial release
-- 0.1.1: README fixes
-- 0.1.2: README fixes
-- 0.1.3: Change Demo-GIF hosting
+- 0.1.5: Jazzmin "support"
 - 0.1.4: README fixes
+- 0.1.3: Change Demo-GIF hosting
+- 0.1.2: README fixes
+- 0.1.1: README fixes
+- 0.1.0: Initial release
