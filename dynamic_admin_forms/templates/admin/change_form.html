@@ -17,6 +17,8 @@
         // Needed to prevent django-jazzmin from converting all
         // select elements into Select2 widgets. These widgets currently
         // don't work with the logic included here.
-        // django.jQuery('select').addClass("selectfilter");
+        if (document.cookie.includes("jazzy_menu")) {
+            django.jQuery('select').addClass("selectfilter");
+        }
     </script>
 {% endblock %}
