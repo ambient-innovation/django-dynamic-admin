@@ -1,6 +1,7 @@
 from itertools import filterfalse
 import json
 
+from django.core.exceptions import FieldDoesNotExist
 from django.apps import apps
 from django.contrib import admin
 from django.http import HttpResponse
@@ -20,7 +21,10 @@ class DynamicModelAdminMixin:
         return form
 
     def _is_related_field(self, field_name):
-        return self.opts.get_field(field_name).is_relation
+        try:
+            return self.opts.get_field(field_name).is_relation
+        except FieldDoesNotExist:
+            return False
 
     @staticmethod
     def render_field(request, app_label, model_name, field_name):
