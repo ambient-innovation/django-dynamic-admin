@@ -24,7 +24,8 @@ class Customer(models.Model):
         PERSONAL = 4, "Personal"
         OTHER = 5, "Other"
 
-    name = models.CharField(max_length=255)
+    first_name = models.CharField(max_length=255)
+    last_name = models.CharField(max_length=255)
     district = models.ForeignKey(District, on_delete=models.CASCADE)
     employee = models.ForeignKey(Employee, on_delete=models.CASCADE)
 
@@ -34,4 +35,4 @@ class Customer(models.Model):
     lead_reason_other = models.CharField(max_length=50, blank=True)
 
     def __str__(self):
-        return self.name
+        return self.first_name + " " + self.last_name

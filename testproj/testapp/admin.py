@@ -3,6 +3,7 @@ from django import forms
 
 from .models import Customer, District, Employee
 from dynamic_admin_forms.admin import DynamicModelAdminMixin
+from django.contrib.admin.widgets import AdminTextInputWidget
 
 
 @admin.register(District)
@@ -16,7 +17,13 @@ class EmployeeAdmin(admin.ModelAdmin):
 
 
 class CustomerForm(forms.ModelForm):
-    some_text = forms.CharField(max_length=100)
+    full_name = forms.CharField(
+        max_length=100,
+        required=False,
+        widget=AdminTextInputWidget(
+            attrs={"readonly": "true", "disabled": "true", "style": "border: none"}
+        ),
+    )
 
     class Meta:
         model = Customer
@@ -26,8 +33,16 @@ class CustomerForm(forms.ModelForm):
 @admin.register(Customer)
 class CustomerAdmin(DynamicModelAdminMixin, admin.ModelAdmin):
     form = CustomerForm
-    fields = ("name", "district", "employee", "lead_reason", "lead_reason_other", "some_text")
-    dynamic_fields = ("employee", "lead_reason_other", "some_text")
+    fields = (
+        "first_name",
+        "last_name",
+        "full_name",
+        "district",
+        "employee",
+        "lead_reason",
+        "lead_reason_other",
+    )
+    dynamic_fields = ("employee", "lead_reason_other", "full_name")
 
     def get_dynamic_employee_field(self, data):
         queryset = Employee.objects.filter(district=data.get("district"))
@@ -48,6 +63,6 @@ class CustomerAdmin(DynamicModelAdminMixin, admin.ModelAdmin):
             value = data.get("lead_reason_other")
         return None, value, hidden
 
-    def get_dynamic_some_text_field(self, data):
-        value = data.get("name")
+    def get_dynamic_full_name_field(self, data):
+        value = data.get("first_name", "") + " " + data.get("last_name", "")
         return None, value, False
