@@ -44,6 +44,16 @@ Add simple interactions to the otherwise static django admin.
 
 ## Usage
 - Add the `dynamic_admin_forms.DynamicModelAdminMixin` to your admin classes
+- Add the `dynamic_admin_forms.urls` to your urls
+  ```python
+  from django.contrib import admin
+  from django.urls import path, include
+  
+  urlpatterns = [
+    path("admin/", admin.site.urls),
+    path("dynamic-admin-form/", include("dynamic_admin_forms.urls")),
+  ]
+  ```
 - In addition to the standard `fields` declaration, specify a list of `dynamic_fields`
 - For each dynamic field, add a method `get_dynamic_{field_name}_field` to the admin
   - Input: `data: Dict[str, Any]` - the cleaned form data

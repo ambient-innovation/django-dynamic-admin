@@ -13,10 +13,12 @@ class DynamicModelAdminMixin:
     dynamic_input_fields = None
 
     def get_form(self, request, obj=None, change=False, **kwargs):
-        form = super().get_form(request, obj, change, **kwargs)
-        self.dynamic_select_fields = filter(self._is_related_field, self.dynamic_fields)
-        self.dynamic_input_fields = filterfalse(
-            self._is_related_field, self.dynamic_fields
+        form = super().get_form(request, obj, **{"change": change, **kwargs})
+        self.dynamic_select_fields = list(
+            filter(self._is_related_field, self.dynamic_fields)
+        )
+        self.dynamic_input_fields = list(
+            filterfalse(self._is_related_field, self.dynamic_fields)
         )
         return form
 
@@ -49,5 +51,9 @@ class DynamicModelAdminMixin:
             bound_field.form.data = bound_field.form.data.copy()
             bound_field.form.data[field_name] = value
 
+        skip_update = field_name in request.FILES and not hidden
         html = bound_field.as_widget()
-        return HttpResponse(json.dumps({"html": html, "hidden": hidden}), status=200)
+        return HttpResponse(
+            json.dumps({"html": html, "hidden": hidden, "skipUpdate": skip_update}),
+            status=200,
+        )
