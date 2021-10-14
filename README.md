@@ -102,6 +102,7 @@ outerHTML of the correct HTML elements to update the form.
 - only tested with Django 3.2
 
 ## Changelog
+- 0.1.7: Improve Jazzmin support and forms with file fields
 - 0.1.6: Support dynamic fields for custom form fields
 - 0.1.5: Jazzmin "support"
 - 0.1.4: README fixes
