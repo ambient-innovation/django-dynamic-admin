@@ -101,6 +101,32 @@ outerHTML of the correct HTML elements to update the form.
   - you have to write `Model.clean()` methods to guard against that
 - only tested with Django 3.2
 
+## Publishing
+
+This project uses the flit package to publish to PyPI.
+Thus publishing should be as easy as running
+``` 
+flit publish
+```
+
+## Development
+
+For local development, create a virtual environment
+in the `testproj` folder:
+```shell
+$ cd testproj
+$ python3 -m venv .venv
+$ source .venv/bin/activate
+$ cd ..
+$ flit install --symlink
+```
+Now the package should be available in your virtual environment
+and any changes should be directly visible.
+
+Alternatively, simply copy the directory `dynamic_admin_forms`
+into any normal django project, so that the python interpreter 
+finds the local version instead of the installed (old) version.
+
 ## Changelog
 - 0.1.7: Improve Jazzmin support and forms with file fields
 - 0.1.6: Support dynamic fields for custom form fields
