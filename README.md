@@ -136,7 +136,20 @@ Alternatively, simply copy the directory `dynamic_admin_forms`
 into any normal django project, so that the python interpreter 
 finds the local version instead of the installed (old) version.
 
+## Running E2E tests
+
+To run end-to-end tests locally:
+```shell
+$ cd testproj
+$ python manage.py runserver 0.0.0.0:8000 &  # start server
+$ python manage.py loaddata fixtures/fixtures-dev.json
+$ cd ../e2e
+$ yarn install  # or npm install (only needed first time)
+$ yarn cypress  # or npm run cypress
+```
+
 ## Changelog
+- 0.1.8: Improve support for select2 widgets used by Jazzmin
 - 0.1.7: Improve Jazzmin support and forms with file fields
 - 0.1.6: Support dynamic fields for custom form fields
 - 0.1.5: Jazzmin "support"

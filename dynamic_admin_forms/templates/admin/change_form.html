@@ -27,9 +27,8 @@
       $('.select2-hidden-accessible').each(function (i, select) {
         var $select = $(select);
         $select.on('change', function(event) {
-          console.log($(event.target).closest("form"))
           var form = $(event.target).closest('form')[0];
-          // for some reason, jQuery's .trigger() method does't seem to work here, so we trigger a change event manually
+          // for some reason, jQuery's .trigger() method doesn't seem to work here, so we trigger a change event manually
           if (form) {
             form.dispatchEvent(new Event("change"));
           }

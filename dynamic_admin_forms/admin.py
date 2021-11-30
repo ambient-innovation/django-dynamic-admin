@@ -46,8 +46,8 @@ class DynamicModelAdminMixin:
             method = getattr(model_admin, method_name)
             bound_form.full_clean()
             queryset, value, hidden = method(bound_form.cleaned_data)
-            bound_field.field.queryset = queryset
 
+            bound_field.field.queryset = queryset
             bound_field.form.data = bound_field.form.data.copy()
             bound_field.form.data[field_name] = value
 
