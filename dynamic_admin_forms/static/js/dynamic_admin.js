@@ -2,7 +2,6 @@ var DynamicAdmin = {
   //# sourceURL="dynamic_admin.js"
   handleResponse: function (target, data) {
     var $ = django.jQuery;
-    data = JSON.parse(data);
 
     // set hidden class in parent form-row (or form-group if using jazzmin)
     if (data.hidden) {
@@ -20,7 +19,7 @@ var DynamicAdmin = {
     // Update the options for the select widget (either select2 instance or normal select element)
     if ($(target).find("select").hasClass("select2-hidden-accessible")) {
       var select2Widget = $(target).find("select");
-      var currentVal = select2Widget.val()
+      var currentVal = select2Widget.val();
       var options = $($.parseHTML(data.html)).find("option");
       select2Widget.find("option").remove();
       select2Widget.append(options);
@@ -30,41 +29,44 @@ var DynamicAdmin = {
     }
   },
 
-  dynamicSelect: function (app_label, model_name, field_name) {
+  dynamicWidgets: function (
+    app_label,
+    model_name,
+    select_field_names,
+    input_field_names
+  ) {
     var $ = django.jQuery;
     var that = this;
 
-    var $form = $('#' + model_name + '_form');
-    $form.on(('change'), function () {
+    var $form = $("#" + model_name + "_form");
+
+    $form.on("change", function () {
+      var field_names = [...select_field_names, ...input_field_names];
+      var params = new URLSearchParams([
+        ["app_label", app_label],
+        ["model_name", model_name],
+        ...field_names.map((name) => ["field_names", name]),
+      ]);
+      var url = `/dynamic-admin-form/?${params}`;
       $.post({
-        url: '/dynamic-admin-form/' + app_label + '/' + model_name + '/' + field_name + '/',
+        url,
         data: new FormData(this),
         contentType: false,
         processData: false,
         success: function (data) {
-          var target = $('.field-' + field_name + ' .related-widget-wrapper')[0];
-          that.handleResponse(target, data);
-        }
+          snippets = JSON.parse(data);
+          snippets.forEach(({ field_name, ...data }) => {
+            if (select_field_names.indexOf(field_name) >= 0) {
+              var target = $(
+                ".field-" + field_name + " .related-widget-wrapper"
+              )[0];
+            } else {
+              var target = $("#id_" + field_name)[0];
+            }
+            that.handleResponse(target, data);
+          });
+        },
       });
     });
   },
-
-  dynamicInput: function (app_label, model_name, field_name) {
-    var $ = django.jQuery;
-    var that = this;
-
-    var $form = $('#' + model_name + '_form');
-    $form.on(('change'), function () {
-      $.post({
-        url: '/dynamic-admin-form/' + app_label + '/' + model_name + '/' + field_name + '/',
-        data: new FormData(this),
-        contentType: false,
-        processData: false,
-        success: function (data) {
-          var target = $('#id_' + field_name)[0];
-          that.handleResponse(target, data);
-        }
-      });
-    });
-  },
-}
+};
