@@ -1,7 +1,7 @@
 from itertools import filterfalse
 import json
 
-from django.core.exceptions import FieldDoesNotExist
+from django.core.exceptions import FieldDoesNotExist, PermissionDenied
 from django.apps import apps
 from django.contrib import admin
 from django.http import HttpResponse
@@ -39,8 +39,13 @@ class DynamicModelAdminMixin:
 
         model = apps.get_model(app_label, model_name)
 
-        # instantiate model form from request data and get field
+        # instantiate model_admin form from request data and get field
         model_admin = admin.site._registry[model]
+
+        # check permissions    
+        if not model_admin.has_module_permission(request):
+            raise PermissionDenied
+
         model_form = model_admin.get_form(request)
         bound_form = model_form(request.POST)
 
