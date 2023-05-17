@@ -27,7 +27,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ["localhost"]
 
-ROOT_URLCONF = "config.urls"
+ROOT_URLCONF = "urls"
 
 INSTALLED_APPS = [
     "dynamic_admin_forms",
