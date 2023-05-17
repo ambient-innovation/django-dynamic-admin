@@ -30,7 +30,7 @@ ALLOWED_HOSTS = ["localhost"]
 ROOT_URLCONF = "urls"
 
 INSTALLED_APPS = [
-    "dynamic_admin_forms",
+    "django_dynamic_admin_forms",
     # "jazzmin",
     "django.contrib.admin",
     "django.contrib.auth",

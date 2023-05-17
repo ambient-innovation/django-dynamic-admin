@@ -16,7 +16,7 @@ import sys
 import django
 from django.conf import settings
 
-sys.path.insert(0, os.path.abspath('..'))  # so that we can access the "dynamic_admin_forms" package
+sys.path.insert(0, os.path.abspath('..'))  # so that we can access the "django_dynamic_admin_forms" package
 settings.configure(
     INSTALLED_APPS=[
         'django.contrib.admin',
@@ -25,17 +25,17 @@ settings.configure(
         'django.contrib.sessions',
         'django.contrib.messages',
         'django.contrib.staticfiles',
-        'dynamic_admin_forms',
+        'django_dynamic_admin_forms',
     ],
     SECRET_KEY='ASDFjklö123456890',
 )
 django.setup()
 
-from dynamic_admin_forms import __version__  # noqa: E402
+from django_dynamic_admin_forms import __version__  # noqa: E402
 
 # -- Project information -----------------------------------------------------
 
-project = 'dynamic-admin-forms'
+project = 'django-dynamic-admin-forms'
 copyright = '2023, Ambient Innovation: GmbH'  # noqa
 author = 'Ambient Innovation: GmbH <hello@ambient.digital>'
 version = __version__

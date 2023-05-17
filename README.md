@@ -1,12 +1,12 @@
-[![pypi](https://img.shields.io/pypi/v/dynamic-admin-forms.svg)](https://pypi.python.org/pypi/dynamic-admin-forms/)
-[![Downloads](https://pepy.tech/badge/dynamic-admin-forms)](https://pepy.tech/project/dynamic-admin-forms)
-[![Documentation Status](https://readthedocs.org/projects/dynamic-admin-forms/badge/?version=latest)](https://dynamic-admin-forms.readthedocs.io/en/latest/?badge=latest)
+[![pypi](https://img.shields.io/pypi/v/django-dynamic-admin-forms.svg)](https://pypi.python.org/pypi/django-dynamic-admin-forms/)
+[![Downloads](https://pepy.tech/badge/django-dynamic-admin-forms)](https://pepy.tech/project/django-dynamic-admin-forms)
+[![Documentation Status](https://readthedocs.org/projects/django-dynamic-admin-forms/badge/?version=latest)](https://django-dynamic-admin-forms.readthedocs.io/en/latest/?badge=latest)
 
 Add simple interactions to the otherwise static django admin.
 
-* [PyPI](https://pypi.org/project/dynamic-admin-forms/)
-* [GitHub](https://github.com/ambient-innovation/dynamic-admin-forms)
-* [Full documentation](https://dynamic-admin-forms.readthedocs.io/en/latest/index.html)
+* [PyPI](https://pypi.org/project/django-dynamic-admin-forms/)
+* [GitHub](https://github.com/ambient-innovation/django-dynamic-admin-forms)
+* [Full documentation](https://django-dynamic-admin-forms.readthedocs.io/en/latest/index.html)
 * Creator & Maintainer: [Ambient Digital](https://ambient.digital)
 
 # django-dynamic-admin-forms
@@ -28,7 +28,7 @@ Add simple interactions to the otherwise static django admin.
     ```python
     INSTALLED_APPS = (
         ...,
-        'dynamic_admin_forms',
+        'django_dynamic_admin_forms',
         'django.contrib.admin'
         ...
     )
@@ -50,15 +50,15 @@ Add simple interactions to the otherwise static django admin.
 - Run `python manage.py collectstatic` to include this apps Javascript code in your `settings.STATIC_ROOT` directory
 
 ## Usage
-- Add the `dynamic_admin_forms.DynamicModelAdminMixin` to your admin classes
-- Add the `dynamic_admin_forms.urls` to your urls
+- Add the `django_dynamic_admin_forms.DynamicModelAdminMixin` to your admin classes
+- Add the `django_dynamic_admin_forms.urls` to your urls
   ```python
   from django.contrib import admin
   from django.urls import path, include
 
   urlpatterns = [
     path("admin/", admin.site.urls),
-    path("dynamic-admin-form/", include("dynamic_admin_forms.urls")),
+    path("dynamic-admin-form/", include("django_dynamic_admin_forms.urls")),
   ]
   ```
 - In addition to the standard `fields` declaration, specify a list of `dynamic_fields`
@@ -74,7 +74,7 @@ Add simple interactions to the otherwise static django admin.
   from django.contrib import admin
 
   from .models import MyModel
-  from dynamic_admin_forms.admin import DynamicModelAdminMixin
+  from django_dynamic_admin_forms.admin import DynamicModelAdminMixin
 
 
   @admin.register(MyModel)
@@ -138,17 +138,6 @@ $ yarn install  # or npm install (only needed first time)
 $ yarn cypress  # or npm run cypress
 ```
 
-## Changelog
-- 0.2.0: Reduce amount of requests, move to ambient-package-update
-- 0.1.8: Improve support for select2 widgets used by Jazzmin
-- 0.1.7: Improve Jazzmin support and forms with file fields
-- 0.1.6: Support dynamic fields for custom form fields
-- 0.1.5: Jazzmin "support"
-- 0.1.4: README fixes
-- 0.1.3: Change Demo-GIF hosting
-- 0.1.2: README fixes
-- 0.1.1: README fixes
-- 0.1.0: Initial release
 
 ## Installation
 
@@ -165,7 +154,7 @@ $ yarn cypress  # or npm run cypress
     ```python
     INSTALLED_APPS = (
         ...,
-        'dynamic_admin_forms',
+        'django_dynamic_admin_forms',
         'django.contrib.admin'
         ...
     )
@@ -201,7 +190,7 @@ $ yarn cypress  # or npm run cypress
 
 - Create a new branch for your feature
 - Change the dependency in your requirements.txt to a local (editable) one that points to your local file system:
-  `-e /Users/workspace/dynamic-admin-forms` or via pip  `pip install -e /Users/workspace/dynamic-admin-forms`
+  `-e /Users/workspace/django-dynamic-admin-forms` or via pip  `pip install -e /Users/workspace/django-dynamic-admin-forms`
 - Ensure the code passes the tests
 - Create a pull request
 
@@ -249,15 +238,15 @@ gettext_lazy (`from django.utils.translation import gettext_lazy as _`).
 
 How to create translation file:
 
-* Navigate to `dynamic-admin-forms`
+* Navigate to `django-dynamic-admin-forms`
 * `python manage.py makemessages -l de`
-* Have a look at the new/changed files within `dynamic_admin_forms/locale`
+* Have a look at the new/changed files within `django_dynamic_admin_forms/locale`
 
 How to compile translation files:
 
-* Navigate to `dynamic-admin-forms`
+* Navigate to `django-dynamic-admin-forms`
 * `python manage.py compilemessages`
-* Have a look at the new/changed files within `dynamic_admin_forms/locale`
+* Have a look at the new/changed files within `django_dynamic_admin_forms/locale`
 
 ### Publish to ReadTheDocs.io
 

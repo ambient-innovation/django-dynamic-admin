@@ -1,4 +1,4 @@
 include README.md
 include LICENSE.md
 recursive-exclude * *.pyc
-recursive-include dynamic_admin_forms *.py *.html *.js *.cfg *.mo *.po
+recursive-include django_dynamic_admin_forms *.py *.html *.js *.cfg *.mo *.po

@@ -2,7 +2,7 @@ from django import forms
 from django.contrib import admin
 from django.contrib.admin.widgets import AdminTextInputWidget
 
-from dynamic_admin_forms.admin import DynamicModelAdminMixin
+from django_dynamic_admin_forms.admin import DynamicModelAdminMixin
 
 from .models import Customer, District, Employee
 

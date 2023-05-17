@@ -4,14 +4,14 @@ from ambient_package_update.metadata.package import PackageMetadata
 from ambient_package_update.metadata.readme import ReadmeContent
 
 METADATA = PackageMetadata(
-    package_name="dynamic_admin_forms",
+    package_name="django_dynamic_admin_forms",
     authors=[
         PackageAuthor(
             name="Ambient Digital",
             email="hello@ambient.digital",
         ),
         PackageAuthor(
-            name="Ambient Digital",
+            name="Fabian Binz",
             email="fabian.binz@ambient.digital",
         ),
     ],
@@ -37,7 +37,7 @@ Add simple interactions to the otherwise static django admin.
     ```python
     INSTALLED_APPS = (
         ...,
-        'dynamic_admin_forms',
+        'django_dynamic_admin_forms',
         'django.contrib.admin'
         ...
     )
@@ -59,15 +59,15 @@ Add simple interactions to the otherwise static django admin.
 - Run `python manage.py collectstatic` to include this apps Javascript code in your `settings.STATIC_ROOT` directory
 
 ## Usage
-- Add the `dynamic_admin_forms.DynamicModelAdminMixin` to your admin classes
-- Add the `dynamic_admin_forms.urls` to your urls
+- Add the `django_dynamic_admin_forms.DynamicModelAdminMixin` to your admin classes
+- Add the `django_dynamic_admin_forms.urls` to your urls
   ```python
   from django.contrib import admin
   from django.urls import path, include
 
   urlpatterns = [
     path("admin/", admin.site.urls),
-    path("dynamic-admin-form/", include("dynamic_admin_forms.urls")),
+    path("dynamic-admin-form/", include("django_dynamic_admin_forms.urls")),
   ]
   ```
 - In addition to the standard `fields` declaration, specify a list of `dynamic_fields`
@@ -83,7 +83,7 @@ Add simple interactions to the otherwise static django admin.
   from django.contrib import admin
 
   from .models import MyModel
-  from dynamic_admin_forms.admin import DynamicModelAdminMixin
+  from django_dynamic_admin_forms.admin import DynamicModelAdminMixin
 
 
   @admin.register(MyModel)
@@ -146,18 +146,7 @@ $ cd ../e2e
 $ yarn install  # or npm install (only needed first time)
 $ yarn cypress  # or npm run cypress
 ```
-
-## Changelog
-- 0.2.0: Reduce amount of requests, move to ambient-package-update
-- 0.1.8: Improve support for select2 widgets used by Jazzmin
-- 0.1.7: Improve Jazzmin support and forms with file fields
-- 0.1.6: Support dynamic fields for custom form fields
-- 0.1.5: Jazzmin "support"
-- 0.1.4: README fixes
-- 0.1.3: Change Demo-GIF hosting
-- 0.1.2: README fixes
-- 0.1.1: README fixes
-- 0.1.0: Initial release""",
+""",
         installation="""
 - Install the package via pip:
 
@@ -170,7 +159,7 @@ $ yarn cypress  # or npm run cypress
     ```python
     INSTALLED_APPS = (
         ...,
-        'dynamic_admin_forms',
+        'django_dynamic_admin_forms',
         'django.contrib.admin'
         ...
     )
