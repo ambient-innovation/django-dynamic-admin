@@ -14,12 +14,8 @@ class DynamicModelAdminMixin:
 
     def get_form(self, request, obj=None, change=False, **kwargs):
         form = super().get_form(request, obj, **{"change": change, **kwargs})
-        self.dynamic_select_fields = list(
-            filter(self._is_related_field, self.dynamic_fields)
-        )
-        self.dynamic_input_fields = list(
-            filterfalse(self._is_related_field, self.dynamic_fields)
-        )
+        self.dynamic_select_fields = list(filter(self._is_related_field, self.dynamic_fields))
+        self.dynamic_input_fields = list(filterfalse(self._is_related_field, self.dynamic_fields))
         return form
 
     def _is_related_field(self, field_name):
@@ -42,7 +38,7 @@ class DynamicModelAdminMixin:
         # instantiate model_admin form from request data and get field
         model_admin = admin.site._registry[model]
 
-        # check permissions    
+        # check permissions
         if not model_admin.has_module_permission(request):
             raise PermissionDenied
 
