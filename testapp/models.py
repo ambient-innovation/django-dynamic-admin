@@ -29,9 +29,7 @@ class Customer(models.Model):
     district = models.ForeignKey(District, on_delete=models.CASCADE)
     employee = models.ForeignKey(Employee, on_delete=models.CASCADE)
 
-    lead_reason = models.PositiveSmallIntegerField(
-        choices=LeadReason.choices, default=LeadReason.INTERNET
-    )
+    lead_reason = models.PositiveSmallIntegerField(choices=LeadReason.choices, default=LeadReason.INTERNET)
     lead_reason_other = models.CharField(max_length=50, blank=True)
 
     has_profile_picture = models.BooleanField(default=False)

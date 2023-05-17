@@ -1,9 +1,10 @@
-from django.contrib import admin
 from django import forms
+from django.contrib import admin
+from django.contrib.admin.widgets import AdminTextInputWidget
+
+from dynamic_admin_forms.admin import DynamicModelAdminMixin
 
 from .models import Customer, District, Employee
-from dynamic_admin_forms.admin import DynamicModelAdminMixin
-from django.contrib.admin.widgets import AdminTextInputWidget
 
 
 @admin.register(District)
@@ -20,9 +21,7 @@ class CustomerForm(forms.ModelForm):
     full_name = forms.CharField(
         max_length=100,
         required=False,
-        widget=AdminTextInputWidget(
-            attrs={"readonly": "true", "disabled": "true", "style": "border: none"}
-        ),
+        widget=AdminTextInputWidget(attrs={"readonly": "true", "disabled": "true", "style": "border: none"}),
     )
 
     class Meta:
