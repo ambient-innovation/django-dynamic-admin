@@ -1,5 +1,9 @@
 # Changelog
 
+**1.0.1**
+
+- Tiy code cleanup
+
 **1.0.0**
 
 - Reduce amount of requests, move to ambient-package-update
