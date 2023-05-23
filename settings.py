@@ -27,16 +27,18 @@ DEBUG = True
 
 ALLOWED_HOSTS = ["localhost"]
 
-ROOT_URLCONF = "config.urls"
+ROOT_URLCONF = "urls"
 
 INSTALLED_APPS = [
-    "dynamic_admin_forms",
+    "django_dynamic_admin_forms",
+    # "jazzmin",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    # "django_extensions",
     "testapp",
 ]
 

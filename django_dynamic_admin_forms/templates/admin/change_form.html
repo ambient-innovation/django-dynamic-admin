@@ -1,0 +1,37 @@
+{% extends "admin/change_form.html" %}
+{% load static %}
+
+{% block admin_change_form_document_ready %}
+  {{ block.super }}
+  <script type="text/javascript" src="{% static 'js/dynamic_admin.js' %}"></script>
+
+  {{ adminform.model_admin.dynamic_select_fields|json_script:"dynamic_select_fields" }}
+  {{ adminform.model_admin.dynamic_input_fields|json_script:"dynamic_input_fields" }}
+
+  <script type="text/javascript">
+    var dynamic_select_fields = JSON.parse(document.getElementById('dynamic_select_fields').textContent);
+    var dynamic_input_fields = JSON.parse(document.getElementById('dynamic_input_fields').textContent);
+    DynamicAdmin.dynamicWidgets("{{ opts.app_label }}", "{{ opts.model_name }}", dynamic_select_fields, dynamic_input_fields);
+  </script>
+{% endblock %}
+
+{# Jazzmin-Support: the extrajs block is added in the jazzmin admin templates and won't do any harm for normal django admin#}
+{% block extrajs %}
+  {{ block.super }}
+  <script>
+    // Find all select2 instances in the current change form and trigger the change event manually
+    // whenever the select2 instance changes it's value.
+    $(function() {
+      $('.select2-hidden-accessible').each(function (i, select) {
+        var $select = $(select);
+        $select.on('change', function(event) {
+          var form = $(event.target).closest('form')[0];
+          // for some reason, jQuery's .trigger() method doesn't seem to work here, so we trigger a change event manually
+          if (form) {
+            form.dispatchEvent(new Event("change"));
+          }
+        })
+      })
+    });
+  </script>
+{% endblock %}

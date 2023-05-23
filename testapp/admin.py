@@ -1,9 +1,10 @@
-from django.contrib import admin
 from django import forms
+from django.contrib import admin
+from django.contrib.admin.widgets import AdminTextInputWidget
+
+from django_dynamic_admin_forms.admin import DynamicModelAdminMixin
 
 from .models import Customer, District, Employee
-from dynamic_admin_forms.admin import DynamicModelAdminMixin
-from django.contrib.admin.widgets import AdminTextInputWidget
 
 
 @admin.register(District)
@@ -20,9 +21,7 @@ class CustomerForm(forms.ModelForm):
     full_name = forms.CharField(
         max_length=100,
         required=False,
-        widget=AdminTextInputWidget(
-            attrs={"readonly": "true", "disabled": "true", "style": "border: none"}
-        ),
+        widget=AdminTextInputWidget(attrs={"readonly": "true", "disabled": "true", "style": "border: none"}),
     )
 
     class Meta:
@@ -41,8 +40,10 @@ class CustomerAdmin(DynamicModelAdminMixin, admin.ModelAdmin):
         "employee",
         "lead_reason",
         "lead_reason_other",
+        "has_profile_picture",
+        "profile_picture",
     )
-    dynamic_fields = ("employee", "lead_reason_other", "full_name")
+    dynamic_fields = ("employee", "lead_reason_other", "full_name", "profile_picture")
 
     def get_dynamic_employee_field(self, data):
         queryset = Employee.objects.filter(district=data.get("district"))
@@ -66,3 +67,6 @@ class CustomerAdmin(DynamicModelAdminMixin, admin.ModelAdmin):
     def get_dynamic_full_name_field(self, data):
         value = data.get("first_name", "") + " " + data.get("last_name", "")
         return None, value, False
+
+    def get_dynamic_profile_picture_field(self, data):
+        return None, None, not data.get("has_profile_picture")
