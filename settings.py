@@ -27,7 +27,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ["localhost"]
 
-ROOT_URLCONF = "urls"
+ROOT_URLCONF = "testapp.urls"
 
 INSTALLED_APPS = [
     "django_dynamic_admin_forms",
