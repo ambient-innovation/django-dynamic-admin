@@ -2,4 +2,4 @@ from django.apps import AppConfig
 
 
 class DynamicSelectConfig(AppConfig):
-    name = "dynamic_admin_forms"
+    name = "django_dynamic_admin_forms"
