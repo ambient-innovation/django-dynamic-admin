@@ -36,7 +36,7 @@ from django_dynamic_admin_forms import __version__  # noqa: E402
 # -- Project information -----------------------------------------------------
 
 project = 'django-dynamic-admin-forms'
-copyright = '2023, Ambient Innovation: GmbH'  # noqa
+copyright = '2023, Ambient Innovation: GmbH'  # noqa: A001
 author = 'Ambient Innovation: GmbH <hello@ambient.digital>'
 version = __version__
 release = __version__

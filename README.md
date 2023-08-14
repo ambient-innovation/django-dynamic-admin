@@ -1,4 +1,4 @@
-[![pypi](https://img.shields.io/pypi/v/django-dynamic-admin-forms.svg)](https://pypi.python.org/pypi/django-dynamic-admin-forms/)
+[![PyPI release](https://img.shields.io/pypi/v/django-dynamic-admin-forms.svg)](https://img.shields.io/pypi/v/django-dynamic-admin-forms.svg)
 [![Downloads](https://pepy.tech/badge/django-dynamic-admin-forms)](https://pepy.tech/project/django-dynamic-admin-forms)
 [![Documentation Status](https://readthedocs.org/projects/django-dynamic-admin-forms/badge/?version=latest)](https://django-dynamic-admin-forms.readthedocs.io/en/latest/?badge=latest)
 

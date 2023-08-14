@@ -1,5 +1,10 @@
 # Changelog
 
+**2.0.0**
+
+- Dropped support for deprecated Django versions 2.2, 3.0, 3.1 & 4.0
+- Updated linters and added more strict linting rules
+
 **1.0.1**
 
 - Tiy code cleanup
