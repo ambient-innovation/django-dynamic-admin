@@ -1,5 +1,6 @@
-[![PyPI release](https://img.shields.io/pypi/v/django-dynamic-admin-forms.svg)](https://img.shields.io/pypi/v/django-dynamic-admin-forms.svg)
-[![Downloads](https://pepy.tech/badge/django-dynamic-admin-forms)](https://pepy.tech/project/django-dynamic-admin-forms)
+[![PyPI release](https://img.shields.io/pypi/v/django-dynamic-admin-forms.svg)](https://pypi.org/project/django-dynamic-admin-forms/)
+[![Downloads](https://static.pepy.tech/badge/django-dynamic-admin-forms)](https://pepy.tech/project/django-dynamic-admin-forms)
+[![Coding Style](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/python/black)
 [![Documentation Status](https://readthedocs.org/projects/django-dynamic-admin-forms/badge/?version=latest)](https://django-dynamic-admin-forms.readthedocs.io/en/latest/?badge=latest)
 
 Add simple interactions to the otherwise static django admin.

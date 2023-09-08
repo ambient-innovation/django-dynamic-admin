@@ -5,6 +5,7 @@ from ambient_package_update.metadata.readme import ReadmeContent
 
 METADATA = PackageMetadata(
     package_name="django_dynamic_admin_forms",
+    company="Ambient Innovation: GmbH",
     authors=[
         PackageAuthor(
             name="Ambient Digital",
@@ -15,6 +16,7 @@ METADATA = PackageMetadata(
             email="fabian.binz@ambient.digital",
         ),
     ],
+    license_year=2022,
     development_status="5 - Production/Stable",
     readme_content=ReadmeContent(
         tagline="Add simple interactions to the otherwise static django admin.",

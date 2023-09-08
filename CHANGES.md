@@ -1,5 +1,9 @@
 # Changelog
 
+**2.0.1**
+
+- Meta updates via ambient-package-update
+
 **2.0.0**
 
 - Dropped support for deprecated Django versions 2.2, 3.0, 3.1 & 4.0
