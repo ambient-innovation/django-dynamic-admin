@@ -1,5 +1,9 @@
 # Changelog
 
+**2.1.0**
+
+- Added Python 3.12 support
+
 **2.0.1**
 
 - Meta updates via ambient-package-update
