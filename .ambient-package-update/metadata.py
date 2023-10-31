@@ -1,5 +1,9 @@
 from ambient_package_update.metadata.author import PackageAuthor
-from ambient_package_update.metadata.constants import DEV_DEPENDENCIES
+from ambient_package_update.metadata.constants import (
+    DEV_DEPENDENCIES,
+    SUPPORTED_DJANGO_VERSIONS,
+    SUPPORTED_PYTHON_VERSIONS,
+)
 from ambient_package_update.metadata.package import PackageMetadata
 from ambient_package_update.metadata.readme import ReadmeContent
 
@@ -186,6 +190,8 @@ $ yarn cypress  # or npm run cypress
     dependencies=[
         "django >=3.2",
     ],
+    supported_django_versions=SUPPORTED_DJANGO_VERSIONS,
+    supported_python_versions=SUPPORTED_PYTHON_VERSIONS,
     optional_dependencies={
         "dev": [
             *DEV_DEPENDENCIES,

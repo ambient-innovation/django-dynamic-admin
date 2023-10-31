@@ -31,7 +31,7 @@ class DynamicModelAdminMixin:
         field_names = request.GET.getlist("field_names")
 
         if not (app_label and model_name and field_names):
-            return HttpResponse(400, "Invalid argumnets")
+            return HttpResponse("Invalid arguments", status=400)
 
         model = apps.get_model(app_label, model_name)
 

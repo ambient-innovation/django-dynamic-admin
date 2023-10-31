@@ -1,5 +1,10 @@
 # Changelog
 
+**2.1.1**
+
+- 100% coverage and bugfix in edge case
+- Updates via ambient package updater
+
 **2.1.0**
 
 - Added Python 3.12 support
