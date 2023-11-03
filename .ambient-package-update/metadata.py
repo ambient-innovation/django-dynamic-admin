@@ -195,7 +195,7 @@ $ yarn cypress  # or npm run cypress
     optional_dependencies={
         "dev": [
             *DEV_DEPENDENCIES,
-            "unittest-xml-reporting~=3.2",
+            "unittest-parametrize~=1.4",
         ],
     },
     ruff_ignore_list=[],
