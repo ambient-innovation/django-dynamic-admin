@@ -26,8 +26,8 @@ class TestDynamicModelAdminMixin(TestCase):
 
     def get_request(self, is_superuser: bool):
         factory = RequestFactory()
-        user = User.objects.create_user(username='testuser', password='testpassword', is_superuser=is_superuser)
-        request = factory.get('/admin/')
+        user = User.objects.create_user(username="testuser", password="testpassword", is_superuser=is_superuser)
+        request = factory.get("/admin/")
         request.user = user
 
         return request
@@ -41,7 +41,7 @@ class TestDynamicModelAdminMixin(TestCase):
         response = mixin.render_field(request)
 
         self.assertEqual(response.status_code, 200)
-        data = response.content.decode('utf-8')
+        data = response.content.decode("utf-8")
         # Add further checks on the data in the response
         self.assertNotEqual(data, "")
 
@@ -63,13 +63,13 @@ class TestDynamicModelAdminMixin(TestCase):
     def test_render_field_with_missing_arguments(self):
         # Test with missing arguments
         request = self.get_request(is_superuser=True)
-        request.GET = QueryDict('')
+        request.GET = QueryDict("")
 
         mixin = DynamicModelAdminMixin()
         response = mixin.render_field(request)
 
         self.assertEqual(response.status_code, 400)
-        data = response.content.decode('utf-8')
+        data = response.content.decode("utf-8")
         self.assertEqual(data, "Invalid arguments")
 
     def test_render_field_with_permission_denied(self):

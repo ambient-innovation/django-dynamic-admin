@@ -22,6 +22,7 @@ METADATA = PackageMetadata(
     ],
     license_year=2022,
     development_status="5 - Production/Stable",
+    has_migrations=False,
     readme_content=ReadmeContent(
         tagline="Add simple interactions to the otherwise static django admin.",
         content="""# django-dynamic-admin-forms
@@ -153,7 +154,7 @@ $ yarn install  # or npm install (only needed first time)
 $ yarn cypress  # or npm run cypress
 ```
 """,
-        installation="""
+        custom_installation="""
 - Install the package via pip:
 
     ```pip install django-dynamic-admin-forms```
