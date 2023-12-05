@@ -56,10 +56,10 @@ dev = [
 name = "django_dynamic_admin_forms"
 
 [project.urls]
-'Homepage' = 'https://github.com/ambient-innovation/django-dynamic-admin-forms/'
+'Homepage' = 'https://github.com/ambient-innovation/django-dynamic-admin'
 'Documentation' = 'https://django-dynamic-admin-forms.readthedocs.io/en/latest/index.html'
 'Maintained by' = 'https://ambient.digital/'
-'Bugtracker' = 'https://github.com/ambient-innovation/django-dynamic-admin-forms/issues'
+'Bugtracker' = 'https://github.com/ambient-innovation/django-dynamic-admin/issues'
 'Changelog' = 'https://django-dynamic-admin-forms.readthedocs.io/en/latest/features/changelog.html'
 
 [tool.ruff]
