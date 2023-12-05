@@ -1,5 +1,10 @@
 # Changelog
 
+**2.2.0**
+
+- Added Django 5.0 support
+- Multiple maintenance improvements
+
 **2.1.0**
 
 - Added Python 3.12 support
