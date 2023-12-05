@@ -1,6 +1,6 @@
 [![PyPI release](https://img.shields.io/pypi/v/django-dynamic-admin-forms.svg)](https://pypi.org/project/django-dynamic-admin-forms/)
 [![Downloads](https://static.pepy.tech/badge/django-dynamic-admin-forms)](https://pepy.tech/project/django-dynamic-admin-forms)
-[![Coverage](https://img.shields.io/badge/Coverage-100.0%25-success)](https://github.com/ambient-innovation/django-dynamic-admin-forms/actions?workflow=CI)
+[![Coverage](https://img.shields.io/badge/Coverage-100.0%25-success)](https://github.com/ambient-innovation/django-dynamic-admin/actions?workflow=CI)
 [![Linting](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json)](https://github.com/astral-sh/ruff)
 [![Coding Style](https://img.shields.io/badge/code%20style-Ruff-000000.svg)](https://github.com/astral-sh/ruff)
 [![Documentation Status](https://readthedocs.org/projects/django-dynamic-admin-forms/badge/?version=latest)](https://django-dynamic-admin-forms.readthedocs.io/en/latest/?badge=latest)
@@ -8,7 +8,7 @@
 Add simple interactions to the otherwise static django admin.
 
 * [PyPI](https://pypi.org/project/django-dynamic-admin-forms/)
-* [GitHub](https://github.com/ambient-innovation/django-dynamic-admin-forms)
+* [GitHub](https://github.com/ambient-innovation/django-dynamic-admin)
 * [Full documentation](https://django-dynamic-admin-forms.readthedocs.io/en/latest/index.html)
 * Creator & Maintainer: [Ambient Digital](https://ambient.digital)
 

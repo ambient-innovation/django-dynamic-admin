@@ -9,6 +9,7 @@ from ambient_package_update.metadata.readme import ReadmeContent
 
 METADATA = PackageMetadata(
     package_name="django_dynamic_admin_forms",
+    github_package_name="django_dynamic_admin",
     company="Ambient Innovation: GmbH",
     authors=[
         PackageAuthor(
@@ -193,8 +194,6 @@ $ yarn cypress  # or npm run cypress
     dependencies=[
         "django >=3.2",
     ],
-    supported_django_versions=SUPPORTED_DJANGO_VERSIONS,
-    supported_python_versions=SUPPORTED_PYTHON_VERSIONS,
     optional_dependencies={
         "dev": [
             *DEV_DEPENDENCIES,
