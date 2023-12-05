@@ -193,9 +193,12 @@ $ yarn cypress  # or npm run cypress
     dependencies=[
         "django >=3.2",
     ],
+    supported_django_versions=SUPPORTED_DJANGO_VERSIONS,
+    supported_python_versions=SUPPORTED_PYTHON_VERSIONS,
     optional_dependencies={
         "dev": [
             *DEV_DEPENDENCIES,
+            "unittest-parametrize~=1.4",
         ],
     },
     ruff_ignore_list=[],
