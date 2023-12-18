@@ -1,5 +1,10 @@
 # Changelog
 
+**2.2.1**
+
+- Fixed security issue with URL not being wrapped in `admin_view`
+- Improved documentation
+
 **2.2.0**
 
 - Added Django 5.0 support

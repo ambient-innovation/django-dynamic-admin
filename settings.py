@@ -13,7 +13,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = Path(__file__).resolve().parent
 
 
 # Quick-start development settings - unsuitable for production
@@ -25,20 +25,18 @@ SECRET_KEY = "7t!88vton98+=cb#=&4_5en37480c7+5qu9u=1@vfz#esaen0e"
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["localhost"]
+ALLOWED_HOSTS = ["localhost", "127.0.0.1"]
 
 ROOT_URLCONF = "testapp.urls"
 
 INSTALLED_APPS = [
     "django_dynamic_admin_forms",
-    # "jazzmin",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    # "django_extensions",
     "testapp",
 ]
 
