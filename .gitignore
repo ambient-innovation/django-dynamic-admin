@@ -59,7 +59,7 @@ test-reports
 backend/media/*
 !backend/media/test-data/*
 */staticfiles
-*/db.sqlite3
+db.sqlite3
 
 # Cypress output
 */cypress/*
