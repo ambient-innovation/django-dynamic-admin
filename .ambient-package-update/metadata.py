@@ -139,7 +139,7 @@ $ flit install --symlink
 Now the package should be available in your virtual environment
 and any changes should be directly visible.
 
-Alternatively, simply copy the directory `dynamic_admin_forms`
+Alternatively, copy the directory `dynamic_admin_forms`
 into any normal django project, so that the python interpreter
 finds the local version instead of the installed (old) version.
 

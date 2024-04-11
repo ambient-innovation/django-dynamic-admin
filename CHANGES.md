@@ -1,5 +1,9 @@
 # Changelog
 
+**3.0.0**
+  * Dropped Django 3.2 & 4.1 support (via `ambient-package-update`)
+  * Internal updates via `ambient-package-update`
+
 **2.2.1**
 
 - Fixed security issue with URL not being wrapped in `admin_view`

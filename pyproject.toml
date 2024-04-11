@@ -13,8 +13,6 @@ classifiers = [
     "Development Status :: 5 - Production/Stable",
     "Environment :: Web Environment",
     "Framework :: Django",
-    "Framework :: Django :: 3.2",
-    "Framework :: Django :: 4.1",
     "Framework :: Django :: 4.2",
     "Framework :: Django :: 5.0",
     "Intended Audience :: Developers",
@@ -46,12 +44,12 @@ dev = [
    'coverage~=7.3',
    'pre-commit~=3.5',
    'ruff~=0.1.7',
-   'sphinx==4.2.0',
-   'sphinx-rtd-theme==1.0.0',
-   'm2r2==0.3.1',
+   'sphinx~=7.1',
+   'sphinx-rtd-theme~=2.0',
+   'm2r2==0.3.3.post2',
    'mistune<2.0.0',
    'flit~=3.9',
-   'ambient-package-update~=23.12.4',
+   'ambient-package-update~=24.4.4',
    'unittest-parametrize~=1.4',
 ]
 
@@ -66,7 +64,7 @@ name = "django_dynamic_admin_forms"
 'Changelog' = 'https://django-dynamic-admin-forms.readthedocs.io/en/latest/features/changelog.html'
 
 [tool.ruff]
-select = [
+lint.select = [
     "E",       # pycodestyle errors
     "W",       # pycodestyle warnings
     "F",       # Pyflakes
@@ -88,11 +86,11 @@ select = [
     "PGH",     # No all-purpose "# noqa" and eval validation
     "PL",      # PyLint
 ]
-ignore = [
+lint.ignore = [
 ]
 
 # Allow autofix for all enabled rules (when `--fix`) is provided.
-fixable = [
+lint.fixable = [
     "E",       # pycodestyle errors
     "W",       # pycodestyle warnings
     "F",       # Pyflakes
@@ -114,7 +112,7 @@ fixable = [
     "PGH",     # No all-purpose "# noqa" and eval validation
     "PL",      # PyLint
 ]
-unfixable = []
+lint.unfixable = []
 
 exclude = [
     ".bzr",
@@ -171,8 +169,6 @@ isolated_build = True
 [testenv]
 # Django deprecation overview: https://www.djangoproject.com/download/
 deps =
-    django32: Django==3.2.*
-    django41: Django==4.1.*
     django42: Django==4.2.*
     django50: Django==5.0.*
 extras = dev,
@@ -187,3 +183,10 @@ python =
     3.11: py311
     3.12: py312
 """
+
+[tool.pytest.ini_options]
+python_files = [
+    "tests.py",
+    "test_*.py",
+    "*_tests.py",
+]
