@@ -4,11 +4,13 @@ from ambient_package_update.metadata.constants import (
     SUPPORTED_DJANGO_VERSIONS,
     SUPPORTED_PYTHON_VERSIONS,
 )
+from ambient_package_update.metadata.maintainer import PackageMaintainer
 from ambient_package_update.metadata.package import PackageMetadata
 from ambient_package_update.metadata.readme import ReadmeContent
 
 METADATA = PackageMetadata(
     package_name="django_dynamic_admin_forms",
+    module_name="django_dynamic_admin_forms",
     github_package_name="django_dynamic_admin",
     company="Ambient Innovation: GmbH",
     authors=[
@@ -21,6 +23,7 @@ METADATA = PackageMetadata(
             email="fabian.binz@ambient.digital",
         ),
     ],
+    maintainer=PackageMaintainer(name="Ambient Digital", url="https://ambient.digital/", email="hello@ambient.digital"),
     license_year=2022,
     development_status="5 - Production/Stable",
     has_migrations=False,

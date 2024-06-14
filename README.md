@@ -10,7 +10,7 @@ Add simple interactions to the otherwise static django admin.
 * [PyPI](https://pypi.org/project/django-dynamic-admin-forms/)
 * [GitHub](https://github.com/ambient-innovation/django-dynamic-admin)
 * [Full documentation](https://django-dynamic-admin-forms.readthedocs.io/en/latest/index.html)
-* Creator & Maintainer: [Ambient Digital](https://ambient.digital)
+* Creator & Maintainer: [Ambient Digital](https://ambient.digital/)
 
 # django-dynamic-admin-forms
 
@@ -240,6 +240,7 @@ Example: run all hooks of pre-push stage
 - To build the documentation run: `sphinx-build docs/ docs/_build/html/`.
 - Open `docs/_build/html/index.html` to see the documentation.
 
+
 ### Translation files
 
 If you have added custom text, make sure to wrap it in `_()` where `_` is
@@ -256,6 +257,7 @@ How to compile translation files:
 * Navigate to `django-dynamic-admin-forms`
 * `python manage.py compilemessages`
 * Have a look at the new/changed files within `django_dynamic_admin_forms/locale`
+
 
 ### Publish to ReadTheDocs.io
 
