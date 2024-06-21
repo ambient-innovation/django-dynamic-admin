@@ -1,5 +1,8 @@
 # Changelog
 
+**3.0.4**
+  * Linted docs with `blacken-docs` via `ambient-package-update`
+
 **3.0.3**
   * Restructured Readme content
 

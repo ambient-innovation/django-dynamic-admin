@@ -31,10 +31,8 @@ Add simple interactions to the otherwise static django admin.
 - Add the module to `INSTALLED_APPS`:
     ```python
     INSTALLED_APPS = (
-        ...,
-        'django_dynamic_admin_forms',
-        'django.contrib.admin'
-        ...
+        "django_dynamic_admin_forms",
+        "django.contrib.admin",
     )
     ```
     Ensure that the `dynamic_admin_forms` comes before the
@@ -45,9 +43,8 @@ Add simple interactions to the otherwise static django admin.
   ```python
   TEMPLATES = [
       {
-          'BACKEND': 'django.template.backends.django.DjangoTemplates',
-          'APP_DIRS': True,
-          ...
+          "BACKEND": "django.template.backends.django.DjangoTemplates",
+          "APP_DIRS": True,
       },
   ]
   ```
@@ -61,8 +58,8 @@ Add simple interactions to the otherwise static django admin.
   from django.urls import path, include
 
   urlpatterns = [
-    path("admin/", admin.site.urls),
-    path("dynamic-admin-form/", include("django_dynamic_admin_forms.urls")),
+      path("admin/", admin.site.urls),
+      path("dynamic-admin-form/", include("django_dynamic_admin_forms.urls")),
   ]
   ```
 - In addition to the standard `fields` declaration, specify a list of `dynamic_fields`
@@ -83,20 +80,20 @@ Add simple interactions to the otherwise static django admin.
 
   @admin.register(MyModel)
   class MyModelAdmin(DynamicModelAdminMixin, admin.ModelAdmin):
-    fields = ("name", "city")
-    dynamic_fields = ("city",)
+      fields = ("name", "city")
+      dynamic_fields = ("city",)
 
-    def get_dynamic_city_field(self, data):
-      # automatically choose first city that matches first letter of name
-      name = data.get("name")
-      if not name:
-        queryset = City.objects.all()
-        value = data.get("city")
-      else:
-        queryset = City.objects.filter(name__startswith=name[0])
-        value = queryset.first()
-      hidden = not queryset.exists()
-      return queryset, value, hidden
+      def get_dynamic_city_field(self, data):
+          # automatically choose first city that matches first letter of name
+          name = data.get("name")
+          if not name:
+              queryset = City.objects.all()
+              value = data.get("city")
+          else:
+              queryset = City.objects.filter(name__startswith=name[0])
+              value = queryset.first()
+          hidden = not queryset.exists()
+          return queryset, value, hidden
   ```
 
 
@@ -155,10 +152,8 @@ $ yarn cypress  # or npm run cypress
 - Add the module to `INSTALLED_APPS`:
     ```python
     INSTALLED_APPS = (
-        ...,
-        'django_dynamic_admin_forms',
-        'django.contrib.admin'
-        ...
+        "django_dynamic_admin_forms",
+        "django.contrib.admin",
     )
     ```
     Ensure that the `dynamic_admin_forms` comes before the
@@ -170,9 +165,8 @@ $ yarn cypress  # or npm run cypress
   ```python
   TEMPLATES = [
       {
-          'BACKEND': 'django.template.backends.django.DjangoTemplates',
-          'APP_DIRS': True,
-          ...
+          "BACKEND": "django.template.backends.django.DjangoTemplates",
+          "APP_DIRS": True,
       },
   ]
   ```

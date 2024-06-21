@@ -16,10 +16,8 @@ Add simple interactions to the otherwise static django admin.
 - Add the module to `INSTALLED_APPS`:
     ```python
     INSTALLED_APPS = (
-        ...,
         'django_dynamic_admin_forms',
-        'django.contrib.admin'
-        ...
+        'django.contrib.admin',
     )
     ```
     Ensure that the `dynamic_admin_forms` comes before the
@@ -32,7 +30,6 @@ Add simple interactions to the otherwise static django admin.
       {
           'BACKEND': 'django.template.backends.django.DjangoTemplates',
           'APP_DIRS': True,
-          ...
       },
   ]
   ```
