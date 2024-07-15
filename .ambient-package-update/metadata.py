@@ -7,6 +7,7 @@ from ambient_package_update.metadata.constants import (
 from ambient_package_update.metadata.maintainer import PackageMaintainer
 from ambient_package_update.metadata.package import PackageMetadata
 from ambient_package_update.metadata.readme import ReadmeContent
+from ambient_package_update.metadata.ruff_ignored_inspection import RuffIgnoredInspection
 
 METADATA = PackageMetadata(
     package_name="django_dynamic_admin_forms",
@@ -33,7 +34,7 @@ METADATA = PackageMetadata(
     supported_django_versions=SUPPORTED_DJANGO_VERSIONS,
     supported_python_versions=SUPPORTED_PYTHON_VERSIONS,
     dependencies=[
-        "django >=3.2",
+        f"Django>={SUPPORTED_DJANGO_VERSIONS[0]}",
     ],
     optional_dependencies={
         "dev": [
@@ -41,5 +42,10 @@ METADATA = PackageMetadata(
             "unittest-parametrize~=1.4",
         ],
     },
-    ruff_ignore_list=[],
+    ruff_ignore_list=[
+        RuffIgnoredInspection(
+            key="RUF012", comment="Mutable class attributes should be annotated with `typing.ClassVar`"
+        ),
+        RuffIgnoredInspection(key="TRY003", comment="Avoid specifying long messages outside the exception class"),
+    ],
 )

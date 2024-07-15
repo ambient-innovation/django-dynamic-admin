@@ -21,8 +21,6 @@ class TestDynamicModelAdminMixin(TestCase):
     @classmethod
     def setUpTestData(cls):
         pass
-        # cls.mixin = DynamicModelAdminMixin()
-        # cls.mixin.opts = site._registry[User]
 
     def get_request(self, is_superuser: bool):
         factory = RequestFactory()

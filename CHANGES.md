@@ -1,5 +1,9 @@
 # Changelog
 
+**3.1.0**
+  * Dropped support for Python 3.8
+  * Added multiple ruff linters
+
 **3.0.4**
   * Linted docs with `blacken-docs` via `ambient-package-update`
 
