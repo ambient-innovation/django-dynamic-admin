@@ -1,5 +1,8 @@
 # Changelog
 
+**3.1.2**
+  * Updated GitHub actions
+
 **3.1.1**
   * Black-end documentation code
 
