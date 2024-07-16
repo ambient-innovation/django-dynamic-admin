@@ -1,5 +1,8 @@
 # Changelog
 
+**3.1.1**
+  * Black-end documentation code
+
 **3.1.0**
   * Dropped support for Python 3.8
   * Added multiple ruff linters
