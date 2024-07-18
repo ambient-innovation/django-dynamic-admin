@@ -11,7 +11,7 @@ from ambient_package_update.metadata.ruff_ignored_inspection import RuffIgnoredI
 
 METADATA = PackageMetadata(
     package_name="django_dynamic_admin_forms",
-    module_name="django_dynamic_admin_forms",
+    github_package_group="ambient-innovation",
     github_package_name="django_dynamic_admin",
     company="Ambient Innovation: GmbH",
     authors=[

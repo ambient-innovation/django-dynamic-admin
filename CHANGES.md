@@ -1,5 +1,10 @@
 # Changelog
 
+**3.1.3**
+  * Added SECURITY.md
+  * Updated linters
+  * Internal updates via `ambient-package-update`
+
 **3.1.2**
   * Updated GitHub actions
 
