@@ -1,5 +1,8 @@
 # Changelog
 
+**3.2.1**
+  * Fixed test matrix
+
 **3.2.0**
   * Added Django 5.1 support
 
