@@ -1,5 +1,8 @@
 # Changelog
 
+**3.2.0**
+  * Added Django 5.1 support
+
 **3.1.3**
   * Added SECURITY.md
   * Updated linters
