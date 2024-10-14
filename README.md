@@ -229,7 +229,7 @@ Example: run all hooks of pre-push stage
 
 ### Update documentation
 
-- To build the documentation run: `sphinx-build docs/ docs/_build/html/`.
+- To build the documentation, run: `sphinx-build docs/ docs/_build/html/`.
 - Open `docs/_build/html/index.html` to see the documentation.
 
 
@@ -265,7 +265,7 @@ How to compile translation files:
 
 - Increment version in main `__init__.py`
 
-- Create pull request / merge to master
+- Create pull request / merge to main
 
 - This project uses the flit package to publish to PyPI. Thus publishing should be as easy as running:
   ```

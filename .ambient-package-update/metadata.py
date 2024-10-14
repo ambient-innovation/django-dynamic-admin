@@ -28,6 +28,7 @@ METADATA = PackageMetadata(
     license_year=2022,
     development_status="5 - Production/Stable",
     has_migrations=False,
+    main_branch="main",
     readme_content=ReadmeContent(
         tagline="Add simple interactions to the otherwise static django admin.",
     ),
