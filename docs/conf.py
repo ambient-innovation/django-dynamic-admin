@@ -16,7 +16,7 @@ import sys
 import django
 from django.conf import settings
 
-sys.path.insert(0, os.path.abspath(".."))  # so that we can access the "django_dynamic_admin_forms" package
+sys.path.insert(0, os.path.abspath(".."))  # so that we can access the "django-dynamic-admin-forms" package
 settings.configure(
     INSTALLED_APPS=[
         "django.contrib.admin",
@@ -36,7 +36,7 @@ from django_dynamic_admin_forms import __version__  # noqa: E402
 # -- Project information -----------------------------------------------------
 
 project = "django-dynamic-admin-forms"
-copyright = "2024, Ambient Innovation: GmbH"  # noqa: A001
+copyright = "2025, Ambient Innovation: GmbH"  # noqa: A001
 author = "Ambient Digital <hello@ambient.digital>"
 version = __version__
 release = __version__

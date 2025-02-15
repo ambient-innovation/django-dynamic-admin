@@ -10,10 +10,10 @@ from ambient_package_update.metadata.readme import ReadmeContent
 from ambient_package_update.metadata.ruff_ignored_inspection import RuffIgnoredInspection
 
 METADATA = PackageMetadata(
-    package_name="django_dynamic_admin_forms",
+    package_name="django-dynamic-admin-forms",
     github_package_group="ambient-innovation",
     github_package_name="django_dynamic_admin",
-    company="Ambient Innovation: GmbH",
+    licenser="Ambient Innovation: GmbH",
     authors=[
         PackageAuthor(
             name="Ambient Digital",
