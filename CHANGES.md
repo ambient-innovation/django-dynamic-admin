@@ -1,5 +1,8 @@
 # Changelog
 
+**3.2.8** (2025-04-03)
+  * Maintenance updates via ambient-package-update
+
 * *3.2.7* (2025-02-15)
   * Internal updates via `ambient-package-update`
 
