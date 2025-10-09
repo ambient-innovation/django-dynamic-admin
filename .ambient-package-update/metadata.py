@@ -29,6 +29,7 @@ METADATA = PackageMetadata(
     development_status="5 - Production/Stable",
     has_migrations=False,
     main_branch="main",
+    claim="Add simple dynamic interaction to the otherwise static django admin.",
     readme_content=ReadmeContent(
         tagline="Add simple interactions to the otherwise static django admin.",
     ),
