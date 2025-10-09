@@ -75,6 +75,7 @@ Add simple interactions to the otherwise static django admin.
   from .models import MyModel
   from django_dynamic_admin_forms.admin import DynamicModelAdminMixin
 
+
   @admin.register(MyModel)
   class MyModelAdmin(DynamicModelAdminMixin, admin.ModelAdmin):
       fields = ("name", "city")
