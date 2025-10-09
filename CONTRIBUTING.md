@@ -64,12 +64,12 @@ gettext_lazy (`from django.utils.translation import gettext_lazy as _`).
 
 How to create translation file:
 
-* Navigate to `django-dynamic-admin-forms`
+* Navigate to `django_dynamic_admin_forms`
 * `python manage.py makemessages -l de`
 * Have a look at the new/changed files within `django_dynamic_admin_forms/locale`
 
 How to compile translation files:
 
-* Navigate to `django-dynamic-admin-forms`
+* Navigate to `django_dynamic_admin_forms`
 * `python manage.py compilemessages`
 * Have a look at the new/changed files within `django_dynamic_admin_forms/locale`
