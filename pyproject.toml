@@ -3,7 +3,7 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "django_dynamic_admin_forms"
+name = "django-dynamic-admin-forms"
 authors = [
     {'name' = 'Ambient Digital', 'email' = 'hello@ambient.digital'},
     {'name' = 'Fabian Binz', 'email' = 'fabian.binz@ambient.digital'},
