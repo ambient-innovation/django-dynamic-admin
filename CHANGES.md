@@ -1,5 +1,8 @@
 # Changelog
 
+**3.2.11** (2025-10-15)
+  * Maintenance updates via ambient-package-update
+
 **3.2.10** (2025-10-09)
   * Maintenance updates via ambient-package-update
 
