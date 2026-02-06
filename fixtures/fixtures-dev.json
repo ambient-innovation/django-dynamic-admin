@@ -449,5 +449,26 @@
         "name": "C",
         "district": 2
     }
+},
+{
+    "model": "testapp.skill",
+    "pk": 1,
+    "fields": {
+        "name": "A"
+    }
+},
+{
+    "model": "testapp.skill",
+    "pk": 2,
+    "fields": {
+        "name": "B"
+    }
+},
+{
+    "model": "testapp.skill",
+    "pk": 3,
+    "fields": {
+        "name": "C"
+    }
 }
 ]

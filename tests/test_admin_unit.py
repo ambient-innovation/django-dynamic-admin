@@ -80,3 +80,18 @@ class TestDynamicModelAdminMixin(TestCase):
         # You can adjust the permissions for the user to raise PermissionDenied
         with self.assertRaises(PermissionDenied):
             mixin.render_field(request)
+
+    def test_render_field_with_custom_method_for_many_to_many_field(self):
+        # Test with many to many field
+        request = self.get_request(is_superuser=True)
+        request.GET = QueryDict("app_label=testapp&model_name=customer&field_names=skills")
+
+        my_admin = MyDynamicModelAdmin(Customer, admin.site)
+
+        my_admin.has_module_permission = MagicMock(return_value=True)
+        my_admin.get_form = MagicMock()
+        my_admin.get_form().full_clean = MagicMock()
+
+        response = my_admin.render_field(request)
+
+        self.assertEqual(response.status_code, 200)
