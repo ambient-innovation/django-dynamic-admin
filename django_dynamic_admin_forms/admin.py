@@ -60,7 +60,7 @@ class DynamicModelAdminMixin:
 
                 bound_field.field.queryset = queryset
                 bound_field.form.data = bound_field.form.data.copy()
-                if isinstance(value, Iterable):
+                if isinstance(value, Iterable) and not isinstance(value, str):
                     bound_field.form.data.setlist(field_name, value)
                 else:
                     bound_field.form.data[field_name] = value

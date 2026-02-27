@@ -73,4 +73,4 @@ class CustomerAdmin(DynamicModelAdminMixin, admin.ModelAdmin):
         return None, None, not data.get("has_profile_picture")
 
     def get_dynamic_skills_field(self, data):
-        return Skill.objects.all(), ["1", "2"], False
+        return Skill.objects.all(), [1, 2], False
