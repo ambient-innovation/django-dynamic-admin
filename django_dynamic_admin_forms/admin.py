@@ -1,4 +1,5 @@
 import json
+from collections.abc import Iterable
 from itertools import filterfalse
 
 from django.apps import apps
@@ -59,7 +60,10 @@ class DynamicModelAdminMixin:
 
                 bound_field.field.queryset = queryset
                 bound_field.form.data = bound_field.form.data.copy()
-                bound_field.form.data[field_name] = value
+                if isinstance(value, Iterable) and not isinstance(value, str):
+                    bound_field.form.data.setlist(field_name, value)
+                else:
+                    bound_field.form.data[field_name] = value
 
             skip_update = field_name in request.FILES and not hidden
             html = bound_field.as_widget()

@@ -4,7 +4,7 @@ from django.contrib.admin.widgets import AdminTextInputWidget
 
 from django_dynamic_admin_forms.admin import DynamicModelAdminMixin
 
-from .models import Customer, District, Employee
+from .models import Customer, District, Employee, Skill
 
 
 @admin.register(District)
@@ -42,8 +42,9 @@ class CustomerAdmin(DynamicModelAdminMixin, admin.ModelAdmin):
         "lead_reason_other",
         "has_profile_picture",
         "profile_picture",
+        "skills",
     )
-    dynamic_fields = ("employee", "lead_reason_other", "full_name", "profile_picture")
+    dynamic_fields = ("employee", "lead_reason_other", "full_name", "profile_picture", "skills")
 
     def get_dynamic_employee_field(self, data):
         queryset = Employee.objects.filter(district=data.get("district"))
@@ -70,3 +71,6 @@ class CustomerAdmin(DynamicModelAdminMixin, admin.ModelAdmin):
 
     def get_dynamic_profile_picture_field(self, data):
         return None, None, not data.get("has_profile_picture")
+
+    def get_dynamic_skills_field(self, data):
+        return Skill.objects.all(), [1, 2], False
