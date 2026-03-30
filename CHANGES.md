@@ -1,5 +1,8 @@
 # Changelog
 
+**3.2.13** (2026-03-30)
+  * Maintenance updates via ambient-package-update
+
 **3.2.12** (2026-03-08)
   * Allow setting a list as a field value
 
