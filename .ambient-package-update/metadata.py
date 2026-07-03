@@ -13,18 +13,18 @@ METADATA = PackageMetadata(
     package_name="django-dynamic-admin-forms",
     github_package_group="ambient-innovation",
     github_package_name="django_dynamic_admin",
-    licenser="Ambient Innovation: GmbH",
+    licenser="Beyonder Deutschland GmbH",
     authors=[
         PackageAuthor(
-            name="Ambient Digital",
-            email="hello@ambient.digital",
+            name="Beyonder Deutschland",
+            email="hello@beyonder.de",
         ),
         PackageAuthor(
             name="Fabian Binz",
-            email="fabian.binz@ambient.digital",
+            email="fabian.binz@beyonder.de",
         ),
     ],
-    maintainer=PackageMaintainer(name="Ambient Digital", url="https://ambient.digital/", email="hello@ambient.digital"),
+    maintainer=PackageMaintainer(name="Beyonder Deutschland", url="https://beyonder.de/", email="hello@beyonder.de"),
     license_year=2022,
     development_status="5 - Production/Stable",
     has_migrations=False,
