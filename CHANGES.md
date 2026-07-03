@@ -1,6 +1,6 @@
 # Changelog
 
-**3.3.0** (2026-07-03)
+**3.3.1** (2026-07-03)
   * **Breaking change:** Dropped support for Python 3.10 (nearing end-of-life in October 2026)
   * Added support for Python 3.14
   * Added native uv support to the rendered Read the Docs configuration
@@ -12,6 +12,9 @@
   * Excluded unsupported Python/Django combinations (Python 3.14 with Django 4.2 and 5.2) from the rendered CI matrix
   * Fixed the rendered ruff target-version to track the minimum supported Python (matching requires-python) instead of the newest
   * Removed the stale .md source suffix from the rendered Sphinx config, since sphinx-mdinclude provides only the mdinclude directive (not a Markdown source parser)
+
+**3.3.0** (2026-07-03)
+  * Empty release...
 
 **3.2.14** (2026-03-30)
 * Maintenance via ambient-package-update
