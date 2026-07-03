@@ -1,5 +1,6 @@
 from ambient_package_update.metadata.author import PackageAuthor
 from ambient_package_update.metadata.constants import (
+    DEPLOYMENT_STATUS_STABLE,
     DEV_DEPENDENCIES,
     SUPPORTED_DJANGO_VERSIONS,
     SUPPORTED_PYTHON_VERSIONS,
@@ -26,7 +27,7 @@ METADATA = PackageMetadata(
     ],
     maintainer=PackageMaintainer(name="Beyonder Deutschland", url="https://beyonder.de/", email="hello@beyonder.de"),
     license_year=2022,
-    development_status="5 - Production/Stable",
+    development_status=DEPLOYMENT_STATUS_STABLE,
     has_migrations=False,
     main_branch="main",
     claim="Add simple dynamic interaction to the otherwise static django admin.",
