@@ -9,7 +9,7 @@ Add simple interactions to the otherwise static django admin.
 
 [PyPI](https://pypi.org/project/django-dynamic-admin-forms/) • [GitHub](https://github.com/ambient-innovation/django-dynamic-admin) • [Full documentation](https://django-dynamic-admin-forms.readthedocs.io/en/latest/index.html)
 
-Creator & Maintainer: [Ambient Digital](https://ambient.digital/)
+Creator & Maintainer: [Beyonder Deutschland](https://beyonder.de/)
 
 # django-dynamic-admin-forms
 
