@@ -1,3 +1,3 @@
 """Add simple dynamic interaction to the otherwise static django admin."""
 
-__version__ = "3.3.2"
+__version__ = "3.3.3"
